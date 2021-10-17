@@ -7,16 +7,10 @@ const Header = () => {
       <Link to="/feeds" className="nav-logo">Buks App</Link>
       <ul className="nav-menu">
         <li className="nav-item">
-          <Link to="/feeds" className="nav-link">Services</Link>
+          Welcome Babatunde Ojo
         </li>
         <li className="nav-item">
-          <Link to="/feeds" className="nav-link">Blog</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/feeds" className="nav-link">About</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/feeds" className="nav-link">Contact</Link>
+          <Link to="/feeds" className="nav-link">Logout</Link>
         </li>
       </ul>
       <div className="hamburger">
