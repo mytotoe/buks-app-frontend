@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { retrieveData, clearData } from "../../../utils/helper";
 import { useHistory } from "react-router-dom";
+import { HOMEURL } from "../../constants";
 import "./style.scss";
 
 const Header = (props:any) => {
@@ -10,7 +11,7 @@ const Header = (props:any) => {
 
   const handleLogout = () => {
     clearData("userData");
-    history.push('/');
+    history.push(`${HOMEURL}`);
   }
 
   return <header className="header">

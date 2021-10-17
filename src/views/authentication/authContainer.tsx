@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AuthView from "./authView";
 import { serializedData, saveData } from "../../utils/helper";
+import { BASEEURL, LOGINURL, HOMEURL, FEEDSURL } from "../constants";
 
 export const AuthContainer = (props:any) => {
 
@@ -20,20 +21,18 @@ export const AuthContainer = (props:any) => {
   }
 
   const handleSubmit = () => {
-    console.log("got here...", formData)
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
     }
-    fetch("http://localhost:4000/api/v1/login", requestOptions)
+    fetch(`${BASEEURL}${LOGINURL}`, requestOptions)
       .then(response => response.json())
       .then(res => {
        saveData("userData", serializedData(res)); 
-       props.history.push('/feeds');
+       props.history.push(`${HOMEURL}${FEEDSURL}`);
       })
       .catch(error => {
-        console.log(error)
       })
   }
 

@@ -1,20 +1,23 @@
 import { Fragment } from "react";
+import { formatDateTime } from "../../../utils/formatter";
 import "./style.scss";
 
-const Comment = () => {
+const Comment = (props:any) => {
+
+  const { data } = props;
+
   return <Fragment>
     <div className="card">
       <div className="container">
-        <h4 className="title"><b>Unable to run react native</b><br/></h4>
-        <small>Ojo Babatunde @ 12/02/2020 11:40pm</small>
-        <div className="description">I am having difficulty running react native on my macbook m1. I got this error. blah blah blah</div> 
+        <small><b>{`${data.user.firstName} ${data.user.lastName}`}</b> @ {formatDateTime(data.createdAt)}</small>
+        <div className="description">{data.description}</div> 
         <div className="status">
           <div className="icon">
-            <span className="count">40</span>
+            <span className="count">{data.likes ? data.likes : 0}</span>
             <i className="fas fa-thumbs-up"></i>
           </div>
           <div className="icon">
-            <span className="count">10</span>
+            <span className="count">{data.dislikes ? data.dislikes : 0}</span>
             <i className="fas fa-thumbs-down"></i>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import OnboardingView from "./onboardingView";
 import { serializedData, saveData } from "../../utils/helper";
+import { BASEEURL, REGISTERURL, HOMEURL, FEEDSURL } from "../constants";
 
 export const OnboardingContainer = (props:any) => {
   const [formData, setFormData] = useState({});
@@ -23,20 +24,18 @@ export const OnboardingContainer = (props:any) => {
   }
 
   const handleSubmit = () => {
-    console.log("got here...", formData)
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData)
     }
-    fetch("http://localhost:4000/api/v1/signup", requestOptions)
+    fetch(`${BASEEURL}${REGISTERURL}`, requestOptions)
       .then(response => response.json())
       .then(res => {
        saveData("userData", serializedData(res)); 
-       props.history.push('/feeds');
+       props.history.push(`${HOMEURL}${FEEDSURL}`);
       })
       .catch(error => {
-        console.log(error)
       })
   }
 
