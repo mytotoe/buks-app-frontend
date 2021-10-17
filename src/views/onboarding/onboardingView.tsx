@@ -40,22 +40,6 @@ const OnboardingView = () => {
                 <input type="radio" name="radiogroup1" id="rd2" />
                 <label htmlFor="rd2">Female</label>
               </div>
-              <div className="input_field select_option">
-                <select>
-                  <option>Select a country</option>
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                </select>
-                <div className="select_arrow"></div>
-              </div>
-              <div className="input_field checkbox_option">
-                <input type="checkbox" id="cb1" />
-                <label htmlFor="cb1">I agree with terms and conditions</label>
-              </div>
-              <div className="input_field checkbox_option">
-                <input type="checkbox" id="cb2" />
-                <label htmlFor="cb2">I want to receive the newsletter</label>
-              </div>
               <input className="button" type="submit" value="Register" />
             </form>
           </div>
