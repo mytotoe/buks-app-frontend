@@ -2,7 +2,13 @@ import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./style.scss";
 
-const AuthView = () => {
+const AuthView = (props:any) => {
+
+  const {
+    handleSubmit,
+    updateFormData
+  }  = props;
+
   return <Fragment>
     <div className="form_wrapper">
       <div className="form_container">
@@ -14,12 +20,12 @@ const AuthView = () => {
           <div className="">
             <form>
               <div className="input_field"> <span><i aria-hidden="true" className="fa fa-envelope"></i></span>
-                <input type="email" name="email" placeholder="Email" required />
+                <input type="email" name="email" placeholder="Email" onChange={event => updateFormData(event)} required />
               </div>
               <div className="input_field"> <span><i aria-hidden="true" className="fa fa-lock"></i></span>
-                <input type="password" name="password" placeholder="Password" required />
+                <input type="password" name="password" placeholder="Password" onChange={event => updateFormData(event)} required />
               </div>
-              <input className="button" type="submit" value="Login" />
+              <input className="button" type="button" value="Login" onClick={handleSubmit} />
             </form>
           </div>
           <p className="credit"><Link to="/signup">New User? Sign up</Link></p>

@@ -52,12 +52,13 @@ a {
 
 .nav-item {
   margin-left: 5rem;
+  color: #F5BA1A;
 }
 
 .nav-link{
   font-size: 1.6rem;
   font-weight: 400;
-  color: #475569;
+  color: #F5BA1A;
 }
 
 .nav-link:hover{
@@ -67,7 +68,7 @@ a {
 .nav-logo {
   font-size: 2.1rem;
   font-weight: 500;
-  color: #482ff7;
+  color: #F5BA1A;
 }
 
 @media only screen and (max-width: 768px) {
@@ -113,8 +114,8 @@ h2 {margin-left: 55px;}
 textarea {
   margin-top: 10px;
   margin-left: 50px;
-  width: 500px;
-  height: 150px;
+  width: 800px;
+  height: 200px;
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -143,7 +144,7 @@ textarea:focus {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  width: 40%;
+  width: 70%;
   border-radius: 5px;
   margin: 20px;
 }
@@ -184,7 +185,7 @@ img {
 
 
 .pushable {
-  background: #0416F7;
+  background: #F5BA1A;
   border-radius: 12px;
   border: none;
   padding: 0;
@@ -197,7 +198,7 @@ img {
   padding: 12px 42px;
   border-radius: 12px;
   font-size: 1.35rem;
-  background: #0416F7;
+  background: #F5BA1A;
   color: white;
   transform: translateY(-6px);
 }

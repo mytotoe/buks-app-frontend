@@ -1,16 +1,27 @@
 import { Link } from "react-router-dom"
+import { retrieveData, clearData } from "../../../utils/helper";
+import { useHistory } from "react-router-dom";
 import "./style.scss";
 
-const Header = () => {
+const Header = (props:any) => {
+
+  const userData = retrieveData("userData");
+  let history = useHistory();
+
+  const handleLogout = () => {
+    clearData("userData");
+    history.push('/');
+  }
+
   return <header className="header">
     <nav className="navbar">
       <Link to="/feeds" className="nav-logo">Buks App</Link>
       <ul className="nav-menu">
         <li className="nav-item">
-          Welcome Babatunde Ojo
+          {`Welcome ${userData.firstName} ${userData.lastName}`}
         </li>
         <li className="nav-item">
-          <Link to="/feeds" className="nav-link">Logout</Link>
+          <span className="nav-link" onClick={handleLogout}>Logout</span>
         </li>
       </ul>
       <div className="hamburger">
