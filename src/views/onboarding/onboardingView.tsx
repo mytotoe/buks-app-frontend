@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 const OnboardingView = () => {
@@ -58,7 +59,7 @@ const OnboardingView = () => {
               <input className="button" type="submit" value="Register" />
             </form>
           </div>
-          <p className="credit">Already have an account? Log in</p>
+          <p className="credit"><Link to="/">Already have an account? Log in</Link></p>
         </div>
       </div>
     </div>

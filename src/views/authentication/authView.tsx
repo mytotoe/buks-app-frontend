@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 const AuthView = () => {
@@ -21,7 +22,7 @@ const AuthView = () => {
               <input className="button" type="submit" value="Login" />
             </form>
           </div>
-          <p className="credit">New User? Sign up</p>
+          <p className="credit"><Link to="/signup">New User? Sign up</Link></p>
         </div>
       </div>
     </div>

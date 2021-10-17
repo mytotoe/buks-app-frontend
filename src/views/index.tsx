@@ -1,15 +1,15 @@
-import React from 'react';
+import { Fragment } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Onboarding from "./onboarding";
 import Authentication from "./authentication"
 
 const Views = () => {
-    return <React.Fragment>
+    return <Fragment>
         <Router>
             <Route exact path="/" component={Authentication} />
-            <Route exact path="/singup" component={Onboarding} />
+            <Route exact path="/signup" component={Onboarding} />
         </Router>
-    </React.Fragment> 
+    </Fragment> 
 }
 
 export default Views;
