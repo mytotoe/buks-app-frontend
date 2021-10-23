@@ -1,4 +1,4 @@
-FROM node:14-alpine AS builder
+FROM node:15.12.0 AS builder
 ENV NODE_ENV production
 # Add a work directory
 WORKDIR /app
@@ -9,8 +9,7 @@ RUN yarn install --production
 # Copy app files
 COPY . .
 # Build the app
-RUN yarn build
-
+RUN npm run build
 # Bundle static assets with nginx
 FROM nginx:1.21.0-alpine as production
 ENV NODE_ENV production
