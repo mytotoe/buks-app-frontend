@@ -1,4 +1,4 @@
-export const BASEEURL = "http://localhost:4000/api/v1/";
+export const BASEEURL = "http://127.0.0.1:59222/api/v1/";
 export const REGISTERURL = "signup";
 export const LOGINURL = "login";
 export const COMMENTURL = "comments";
