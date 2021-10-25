@@ -2,42 +2,41 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gcp-buks-frontend
+  labels:
+    app: gcp-buks-frontend
 spec:
-  replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: gcp-buks-frontend
+      
   template:
     metadata:
       labels:
         app: gcp-buks-frontend
+        tier: gcp-buks-frontend
     spec:
       containers:
-      - name: gcp-buks-frontend
-        image: japhetism/gcp-buks-frontend:tagversion
-        imagePullPolicy: Always
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 80
-
-
+        - name: gcp-buks-frontend
+          image: japhetism/gcp-buks-frontend:tagversion
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 5000
+            name: gcp-buks-frontend
 
 ---
-
-
 apiVersion: v1
 kind: Service
 metadata:
   name: gcp-buks-frontend
+  labels:
+    app: gcp-buks-frontend
 spec:
-  type: NodePort
+  ports:
+    - port: 5000
+      targetPort: 5000
   selector:
     app: gcp-buks-frontend
-  ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    nodePort: 32000
+    tier: gcp-buks-frontend
+  type: LoadBalancer
