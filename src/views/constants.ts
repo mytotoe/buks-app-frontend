@@ -1,4 +1,4 @@
-export const BASEEURL = "http://34.69.2.52:4000//api/v1/";
+export const BASEEURL = "http://34.69.2.52:4000/api/v1/";
 export const REGISTERURL = "signup";
 export const LOGINURL = "login";
 export const COMMENTURL = "comments";
