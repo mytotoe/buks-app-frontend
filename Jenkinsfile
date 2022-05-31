@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         PROJECT_ID = "cloud-school-project-330005"
-        CLUSTER_NAME = "k8s-cluster"
+        CLUSTER_NAME = "test-cluster"
         LOCATION = "us-central1-c"
         CREDENTIALS_ID = 'cloud-school-project'
     }
